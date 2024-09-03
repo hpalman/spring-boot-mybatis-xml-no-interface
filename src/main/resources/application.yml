@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-boot-mybatis-xml-no-interface
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/qrdb
+    username: root
+    password: maria
+    driver-class-name: org.mariadb.jdbc.Driver
+
+mybatis:
+    config-location: classpath:mybatis-config.xml
+
+logging:
+  config: classpath:logback.xml

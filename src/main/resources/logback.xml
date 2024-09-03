@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Logback은 DTD나 Schema를 제공하지 않아, 이에
+이클립스에서 Warning을 한다는 것이다. 아래 DOCTYPE을 추가하거나 Preference에서 Validation처리
+ -->
+<!DOCTYPE xml>
+<configuration>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%d [%thread] [%-5level] %logger %C - %m%n</Pattern>
+    </layout>
+  </appender>
+  <root level="${root-level:-DEBUG}">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
