@@ -1,2 +1,27 @@
 2024.09.03
 https://chatgpt.com/c/5fd1b5ff-0ede-45a6-893b-fbfc08661038
+Q> show me a best example of java spring boot mybatis example with mapper xml file and no mapper interface
+
+logback.xml 적용
+logging.config=classpath:logback.xml
+
+/* ======= application.yml ========
+spring:
+  application:
+    name: spring-boot-mybatis-xml-no-interface
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/qrdb
+    username: root
+    password: maria
+    driver-class-name: org.mariadb.jdbc.Driver
+
+mybatis:
+    config-location: classpath:mybatis-config.xml
+
+logging:
+  config: classpath:logback.xml
+*/
+
+
+Q2> show me a best example of java spring boot mybatis example of multiple dbms with mapper xml file and no mapper interface

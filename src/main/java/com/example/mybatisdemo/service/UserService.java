@@ -29,15 +29,29 @@ public class UserService {
     }
 
     @Transactional
-    public void save(User user) {
+    public void save(User user) throws Exception {
     	log.info("save call.");
         if (user.getId() == null) {
+        	log.info("UserMapper.insert I");
             sqlSession.insert("UserMapper.insert", user);//
-            sqlSession.insert("UserMapper.insert2", user);
+        	log.info("UserMapper.insert O");
+        	
+        	//log.info("UserMapper.insert2 I");
+            //user.setId(1L);
+            //sqlSession.insert("UserMapper.insert2", user);
+        	//log.info("UserMapper.insert2 O");
+
         } else {
+        	log.info("UserMapper.update I");
             sqlSession.update("UserMapper.update", user);
-            sqlSession.insert("UserMapper.insert2", user);
+        	log.info("UserMapper.update O");
+
+        	//log.info("UserMapper.insert2 I");
+        	//user.setId(2L);
+            //sqlSession.insert("UserMapper.insert2", user);
+        	//log.info("UserMapper.insert2 O");
         }
+        throw new Exception("rollback test");
     }
 
     public void delete(Long id) {
